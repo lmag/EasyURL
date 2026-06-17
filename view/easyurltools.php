@@ -378,7 +378,13 @@ print '<style>
     </span>
   </div>
   <div class="eu-con-body" id="eu-cb" style="display:none">' . $consoleInitialContent . '</div>
-</div>';
+</div>
+<script>
+setInterval(function() {
+    if (jQuery(\'#eu-cp\').hasClass(\'hide-ok\')) { jQuery(\'.eu-log-s\').closest(\'.eu-log-line\').hide(); } else { jQuery(\'.eu-log-s\').closest(\'.eu-log-line\').show(); }
+    if (jQuery(\'#eu-cp\').hasClass(\'hide-ko\')) { jQuery(\'.eu-log-e\').closest(\'.eu-log-line\').hide(); } else { jQuery(\'.eu-log-e\').closest(\'.eu-log-line\').show(); }
+}, 200);
+</script>';
 
 // End of page
 llxFooter();
