@@ -277,7 +277,7 @@ window.easyurl.shortener.createShortener = function(form, current, nbUrl, succes
         successCount++;
         if ($('#eu-count-ok').length) { $('#eu-count-ok').text(parseInt($('#eu-count-ok').text() || 0) + 1); }
         $('#eu-cb').append(`
-          <div class="eu-log-line">
+          <div class="eu-log-line log-type-ok">
             <span class="eu-log-time">${timeNow}</span>
             <span class="eu-log-pfx">&gt;_</span>
             <span class="eu-log-s">[OK] Génération de : ${generatedUrl} réussie.</span>
@@ -313,7 +313,7 @@ window.easyurl.shortener.createShortener = function(form, current, nbUrl, succes
         
         if ($('#eu-count-ko').length) { $('#eu-count-ko').text(parseInt($('#eu-count-ko').text() || 0) + 1); }
         $('#eu-cb').append(`
-          <div class="eu-log-line">
+          <div class="eu-log-line log-type-ko">
             <span class="eu-log-time">${timeNow}</span>
             <span class="eu-log-pfx">&gt;_</span>
             <span class="eu-log-e">[KO] Génération de : ${failedKeyword || current} | ${displayMsg}</span>

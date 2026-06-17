@@ -334,9 +334,9 @@ if (file_exists($logFile)) {
         if (preg_match('/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - (.*)$/', trim($line), $matches)) {
             $time = substr($matches[1], 11);
             $msg = $matches[2];
-            $consoleInitialContent .= '<div class="eu-log-line"><span class="eu-log-time">' . $time . '</span><span class="eu-log-pfx">&gt;_</span><span class="eu-log-e">[HISTORIQUE KO] ' . dol_escape_htmltag($msg) . '</span></div>';
+            $consoleInitialContent .= '<div class="eu-log-line log-type-ko"><span class="eu-log-time">' . $time . '</span><span class="eu-log-pfx">&gt;_</span><span class="eu-log-e">[HISTORIQUE KO] ' . dol_escape_htmltag($msg) . '</span></div>';
         } else {
-            $consoleInitialContent .= '<div class="eu-log-line"><span class="eu-log-pfx">&gt;_</span><span class="eu-log-e">' . dol_escape_htmltag(trim($line)) . '</span></div>';
+            $consoleInitialContent .= '<div class="eu-log-line log-type-ko"><span class="eu-log-pfx">&gt;_</span><span class="eu-log-e">' . dol_escape_htmltag(trim($line)) . '</span></div>';
         }
     }
 }
@@ -354,8 +354,8 @@ print '<style>
 .eu-log-time{color:#484f58;min-width:56px;flex-shrink:0;}
 .eu-log-pfx{color:#58a6ff;flex-shrink:0;}
 .eu-log-s{color:#3fb950;} .eu-log-e{color:#f85149;} .eu-log-w{color:#d29922;} .eu-log-i{color:#c9d1d9;}
-.hide-ok .eu-log-line:has(.eu-log-s) { display: none !important; }
-.hide-ko .eu-log-line:has(.eu-log-e) { display: none !important; }
+.hide-ok .log-type-ok { display: none !important; }
+.hide-ko .log-type-ko { display: none !important; }
 </style>
 <div class="eu-console-popup" id="eu-cp">
   <div class="eu-con-hd" onclick="jQuery(\'#eu-cb\').toggle();">
